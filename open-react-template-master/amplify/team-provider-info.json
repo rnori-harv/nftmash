@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-lampoonnft-staging-184507-authRole",
+      "UnauthRoleArn": "arn:aws:iam::066619381544:role/amplify-lampoonnft-staging-184507-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::066619381544:role/amplify-lampoonnft-staging-184507-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-lampoonnft-staging-184507-deployment",
+      "UnauthRoleName": "amplify-lampoonnft-staging-184507-unauthRole",
+      "StackName": "amplify-lampoonnft-staging-184507",
+      "StackId": "arn:aws:cloudformation:us-east-1:066619381544:stack/amplify-lampoonnft-staging-184507/0b8bc6b0-1b0c-11ec-a99d-0a3629edb87f",
+      "AmplifyAppId": "d1pp0xosnst301"
+    },
+    "categories": {
+      "auth": {
+        "lampoonnft": {}
+      }
+    }
+  }
+}

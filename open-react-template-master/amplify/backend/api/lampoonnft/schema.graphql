@@ -1,0 +1,25 @@
+type Caption @model @auth(rules: [{allow: public}]) @key(name: "byCandidate", fields: ["candidateID"]) {
+  id: ID!
+  body: String
+  User: User @connection
+  likes: Int
+  candidateID: ID
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  username: String
+  role: String
+  email: AWSEmail
+  profile: String
+}
+
+type Candidate @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  likes: Int
+  postTime: AWSDateTime
+  Artist: User @connection
+  source: String
+  Captions: [Caption] @connection(keyName: "byCandidate", fields: ["id"])
+}
+ 
