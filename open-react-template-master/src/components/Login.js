@@ -40,7 +40,6 @@ function MyApp({ Component, pageProps }) {
 
   return state.authStage === AuthState.SignedIn && state.user ? (
     <>
-      <CustomSignOutButton/>
       <Feeder/>
     </>
   ) : (
@@ -61,7 +60,6 @@ function MyApp({ Component, pageProps }) {
           ]}
         />
       </AmplifyAuthenticator>
-      <footer>Powered by the Tech Board</footer>
     </>
   )
 }

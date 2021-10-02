@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 
 
+
 const handleSignOutButtonClick = async () => {
     try {
         await Auth.signOut();
