@@ -71,7 +71,7 @@ const Hero = ({
             </h1>
             <div className="container-xs">
               <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-               Help us be funny. Caption our art, upvote top captions, and we'll add them to our magazines or turn them into NFTs (whichever one makes us more money off of your hard work).
+               Help us be funny. Caption our art, upvote top captions, and we'll add them to our content or turn them into NFTs (whichever one makes us more money off of your hard work).
                 </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>

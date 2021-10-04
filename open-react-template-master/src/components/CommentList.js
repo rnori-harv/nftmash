@@ -65,6 +65,11 @@ export function CommentList({ postId }) {
                 <IconButton colorScheme="red" icon={<ArrowDownIcon />} 
             onClick={() => onClick2(comment)} variant='ghost' />
                 <Text as='b' color="#9430f1">{comment.User.username}</Text> {comment.body}
+                <div className="container-xs">
+              <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
+               Help us be funny. Caption our art, upvote top captions, and we'll add them to our content or turn them into NFTs (whichever one makes us more money off of your hard work).
+                </p>
+                </div>
             </Box>
             ))}
         </Box>

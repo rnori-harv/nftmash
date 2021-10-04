@@ -6,7 +6,7 @@ import {Candidate, Caption} from '../models'
 import React, { useState } from 'react';
 import CommentBox from './CommentBox';
 
-export function Card ({ children }) {
+export function Card ({children }) {
    return (
     <Box maxW ='lg' borderWidth = '1px' borderRadius = 'md' overflow = 'hidden' m = {5}>
         {children}
@@ -24,8 +24,6 @@ Card.Header = function  ({ Artist }){
 Card.Main = function ({ candidate }) {
 
     let cardContent = <Image src = {candidate.source} />
-
-    console.log(candidate.likes)
 
     if (candidate.likes > 99){
         return (
