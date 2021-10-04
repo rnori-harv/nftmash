@@ -1,0 +1,14 @@
+{
+    "CreateAPIKey": 1,
+    "AppSyncApiName": "lampoonnft",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authlampoonnft",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "S3DeploymentBucket": "amplify-lampoonnft-staging-184507-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/56cda6389baa537edc4b87b214ce17d8dd96d0b6"
+}
