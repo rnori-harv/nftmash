@@ -6,6 +6,7 @@ import {Caption} from '../models'
 import { Box, Image, Flex, Avatar, Text, Spacer, IconButton } from '@chakra-ui/react'
 import { ChatIcon, ArrowUpIcon, ArrowDownIcon} from '@chakra-ui/icons'
 import { render } from 'react-dom'
+import {Comment} from './Comment'
 
 
 function doLike(comment){
@@ -56,22 +57,7 @@ export function CommentList({ postId }) {
     const [likes, setLikes] = useState([])
     return (
         <Box ml={3}>
-            {comments.map(comment => (
-            <Box>
-                {setLikes}
-                {comment.likes}
-                <IconButton colorScheme="green" icon={<ArrowUpIcon />} 
-            onClick={() => onClick(comment)} variant='ghost' />
-                <IconButton colorScheme="red" icon={<ArrowDownIcon />} 
-            onClick={() => onClick2(comment)} variant='ghost' />
-                <Text as='b' color="#9430f1">{comment.User.username}</Text> {comment.body}
-                <div className="container-xs">
-              <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-               Help us be funny. Caption our art, upvote top captions, and we'll add them to our content or turn them into NFTs (whichever one makes us more money off of your hard work).
-                </p>
-                </div>
-            </Box>
-            ))}
+            {comments.map(myComment => <Comment comment = {myComment}/>)}
         </Box>
     )
 }

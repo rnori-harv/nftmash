@@ -8,7 +8,7 @@ import CommentBox from './CommentBox';
 
 export function Card ({children }) {
    return (
-    <Box maxW ='lg' borderWidth = '1px' borderRadius = 'md' overflow = 'hidden' m = {5}>
+    <Box maxW ='lg' borderWidth = '1px' borderRadius = 'md' overflow = 'hidden' m = {3}>
         {children}
     </Box>
    )  
@@ -51,45 +51,13 @@ function doLike(post){
 
 }
 
-const LikeButton = (post) => {
-    let initialLikes = post.likes;
-    const [likes, setLikes] = useState(initialLikes);
-    const onClick = (post) => {
-        if (likes === initialLikes) {
-          setLikes(initialLikes + 1);
-          doLike(post);
-        }
-      };
-    return <IconButton colorScheme="green" icon={<ArrowUpIcon />} variant='ghost' 
-            onClick={() => onClick(post)} />
-}
-
 function doDislike(post){
-    console.log("hello")
     DataStore.save(
         Candidate.copyOf(post, updated => {
           updated.likes = updated.likes - 1;}))
 
 }
 
-const DislikeButton = (post) => {
-    let initialLikes = post.likes;
-    const [likes, setLikes] = useState(initialLikes);
-    const onClick2 = (post) => {
-        if (likes === initialLikes) {
-          setLikes(initialLikes - 1);
-          doDislike(post);
-        }
-        else{
-            console.log("clicked")
-        }
-    };
-    return <IconButton colorScheme="red" icon={<ArrowDownIcon />} variant='ghost' 
-            onClick={() => {
-                onClick2(post);
-                this.state.count = this.state.count - 1
-            }}/>
-}
 
 const MakeFooter = (post) => {
     let initialLikes = post.likes;
@@ -121,9 +89,13 @@ const MakeFooter = (post) => {
             }}/>
             <IconButton icon={<ChatIcon />} variant='ghost' 
             onClick={() => {
-                setComment('comment')
+                if (comment === 'comment'){
+                    setComment('')
+                }
+                else
+                    setComment('comment')
             }}/>
-            {comment === 'comment' && <CommentBox />}
+            {comment === 'comment' && <CommentBox myPost={post.id} />}
         </Box>
     </Box>
     )

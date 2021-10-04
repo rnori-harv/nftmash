@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import {Box, Stack, Center, Image, Heading, Text, ChakraProvider} from '@chakra-ui/react'
 import {Feed} from './Feed'
 import {Card} from './Card'
+import {Card2} from './Card2'
 import { Logo } from './Logo'
 import {CommentList} from './CommentList'
   
