@@ -5,6 +5,7 @@ import {
   AmplifySignOut,
   AmplifySignUp,
 } from '@aws-amplify/ui-react'
+import { withRouter, Redirect } from 'react-router'
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components'
 import config from '../aws-exports'
 import Feeder from './Feeder'
@@ -26,6 +27,7 @@ const initialState = {}
 function MyApp({ Component, pageProps }) {
   const [state, dispatch] = React.useReducer(authReducer, initialState)
 
+
   React.useEffect(() => {
     //this will fire anytime a user switches auth scenarios
     // https://docs.amplify.aws/ui/auth/authenticator/q/framework/react#methods--enums
@@ -37,6 +39,9 @@ function MyApp({ Component, pageProps }) {
       })
     })
   }, [])
+
+  console.log(state.authStage);
+
 
   return state.authStage === AuthState.SignedIn && state.user ? (
     <>
