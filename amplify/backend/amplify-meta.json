@@ -41,7 +41,7 @@
         "GraphQLAPIEndpointOutput": "https://cf3wiklc6bcvhmnwiqnvj743zu.appsync-api.us-east-1.amazonaws.com/graphql",
         "GraphQLAPIKeyOutput": "da2-hakcy7xrsjf3bkur72m62d6y2u"
       },
-      "lastPushTimeStamp": "2021-10-02T18:30:29.001Z",
+      "lastPushTimeStamp": "2021-10-05T00:03:43.330Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-lampoonnft-staging-184507-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apilampoonnft"
@@ -86,7 +86,7 @@
         "IdentityPoolName": "testAuthIdentityPool__staging",
         "UserPoolName": "lampoonnft"
       },
-      "lastPushTimeStamp": "2021-10-02T18:30:29.002Z",
+      "lastPushTimeStamp": "2021-10-05T00:03:43.332Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-lampoonnft-staging-184507-deployment/amplify-cfn-templates/auth/lampoonnft-cloudformation-template.yml",
         "logicalId": "authlampoonnft"
