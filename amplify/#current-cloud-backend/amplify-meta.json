@@ -1,0 +1,97 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-lampoonnft-staging-184507-authRole",
+      "UnauthRoleArn": "arn:aws:iam::066619381544:role/amplify-lampoonnft-staging-184507-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::066619381544:role/amplify-lampoonnft-staging-184507-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-lampoonnft-staging-184507-deployment",
+      "UnauthRoleName": "amplify-lampoonnft-staging-184507-unauthRole",
+      "StackName": "amplify-lampoonnft-staging-184507",
+      "StackId": "arn:aws:cloudformation:us-east-1:066619381544:stack/amplify-lampoonnft-staging-184507/0b8bc6b0-1b0c-11ec-a99d-0a3629edb87f",
+      "AmplifyAppId": "d1pp0xosnst301"
+    }
+  },
+  "api": {
+    "lampoonnft": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            },
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authlampoonnft"
+              }
+            }
+          ]
+        },
+        "GraphQLAPIIdOutput": "ppceeynmgjeedoniaz5kqqjola",
+        "GraphQLAPIEndpointOutput": "https://cf3wiklc6bcvhmnwiqnvj743zu.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-hakcy7xrsjf3bkur72m62d6y2u"
+      },
+      "lastPushTimeStamp": "2021-09-22T01:02:19.590Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-lampoonnft-staging-184507-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apilampoonnft"
+      },
+      "lastPushDirHash": "fENpgejKD6EoECZMtRw3VjtcYEM="
+    }
+  },
+  "auth": {
+    "lampoonnft": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "loginMechanisms": [],
+        "signupAttributes": [
+          "PREFERRED_USERNAME",
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS",
+            "REQUIRES_UPPERCASE"
+          ]
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "output": {
+        "UserPoolId": "us-east-1_OVqEBJWqU",
+        "AppClientIDWeb": "3dhnj5r7dpj5n7006rqdljcj9u",
+        "AppClientID": "26p4sgapv7mu9j3nfben8hi9da",
+        "IdentityPoolId": "us-east-1:9ae19ea8-ffab-4775-b3bc-cd196d83a3e7",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:066619381544:userpool/us-east-1_OVqEBJWqU",
+        "IdentityPoolName": "testAuthIdentityPool__staging",
+        "UserPoolName": "lampoonnft"
+      },
+      "lastPushTimeStamp": "2021-09-22T01:02:19.585Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-lampoonnft-staging-184507-deployment/amplify-cfn-templates/auth/lampoonnft-cloudformation-template.yml",
+        "logicalId": "authlampoonnft"
+      }
+    }
+  }
+}
