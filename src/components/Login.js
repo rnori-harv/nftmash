@@ -6,11 +6,14 @@ import {
   AmplifySignUp,
 } from '@aws-amplify/ui-react'
 import { withRouter, Redirect } from 'react-router'
+import { Auth, appendToCognitoUserAgent } from '@aws-amplify/auth';
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components'
 import config from '../aws-exports'
 import Feeder from './Feeder'
-import { Auth, Hub } from 'aws-amplify';
+import { Logger } from '@aws-amplify/core';
 import {CustomSignOutButton} from './CustomSignOutButton'
+
+const logger = new Logger('withAuthenticator');
 
 Amplify.configure(config)
 
@@ -24,29 +27,20 @@ const authReducer = (state, action) => {
 }
 
 const initialState = {}
-function MyApp({ Component, pageProps }) {
-  const [state, dispatch] = React.useReducer(authReducer, initialState)
+const MyApp= () =>{
 
+  const [authState, setAuthState] = React.useState();
+  const [user, setUser] = React.useState();
 
   React.useEffect(() => {
-    //this will fire anytime a user switches auth scenarios
-    // https://docs.amplify.aws/ui/auth/authenticator/q/framework/react#methods--enums
-    onAuthUIStateChange((nextAuthState, data) => {
-      dispatch({
-        type: 'authStateChange',
-        authStage: nextAuthState,
-        user: data,
-      })
-    })
-  }, [])
+      return onAuthUIStateChange((nextAuthState, authData) => {
+          setAuthState(nextAuthState);
+          setUser(authData)
+      });
+  }, []);
 
-  console.log(state.authStage);
-
-
-  return state.authStage === AuthState.SignedIn && state.user ? (
-    <>
-      <Feeder/>
-    </>
+  return authState === AuthState.SignedIn && user ? (
+    <Feeder/>
   ) : (
     <>
       <AmplifyAuthenticator>

@@ -70,7 +70,7 @@ const FeaturesSplit = ({
                   Sept 2021
                   </div>
                 <h3 className="mt-0 mb-12">
-                  The infamous Lmapoon Chair Prank
+                  The infamous Lampoon Chair Prank
                   </h3>
                 <p className="m-0">
                   In memorial of our most iconic prank, we minted the picture of our board members with then presidential candidate Donald Trump. A comper captioned the photo "The Harvard Crimson with former President Trump after attending a successful workshop on disseminating accurate and authentic information." Now, this image and caption are soon to be selling as t-shirts worldwide; click on the image for the NFT listing.  
